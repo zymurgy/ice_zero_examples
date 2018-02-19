@@ -1,22 +1,21 @@
 PROJ = uart_tx_char
-DEVICE = hx8k
+PART = hx
+DEV  = 8k
+PKG  = tq144:4k
+PCF  = pins.pcf
 
-FILES = $(PROJ).v baudgen_tx.v uart_tx.v
+FILES = $(PROJ).v uart_tx_8n1.v
 
 all:
 	yosys -p "synth_ice40 -top $(PROJ) -blif $(PROJ).blif" $(FILES)
-	arachne-pnr -d 8k -P tq144:4k -o $(PROJ).asc -p pins.pcf $(PROJ).blif
+	arachne-pnr -d $(DEV) -P $(PKG) -o $(PROJ).asc -p $(PCF) $(PROJ).blif
 	icepack $(PROJ).asc $(PROJ).bin
+	icetime -d $(PART)$(DEV) -P $(PKG) -r $(PROJ).rpt -mt $(PROJ).asc
 
-icezprog: icezprog.c
-	gcc -o icezprog -Wall -Os icezprog.c -lwiringPi -lrt -lstdc++
-
-prog: $(PROJ).bin icezprog
-	./icezprog $<
+prog: $(PROJ).bin
+	icezprog $<
 
 clean:
-	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin
-	rm -f icezprog
+	rm -f $(PROJ).asc $(PROJ).bin $(PROJ).blif $(PROJ).rpt
 
-.SECONDARY:
-.PHONY: all prog clean
+.PHONY: all clean prog

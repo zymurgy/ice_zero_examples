@@ -1,0 +1,135 @@
+# IceZero FPGA
+
+# 100Mhz Clock
+set_io clk_100mhz 49
+
+# OK LED
+set_io ok_led 110
+
+# PI SPI
+set_io pi_spi_ce0  85
+set_io pi_spi_ce1  78
+set_io pi_spi_sck  79
+set_io pi_spi_miso 87
+set_io pi_spi_misi 90
+
+# PI I2C
+set_io pi_i2c_scl 114
+set_io pi_i2c_sda 115
+
+# PI UART
+set_io pi_uart_tx 112
+set_io pi_uart_rx 113
+
+# PI ID
+set_io pi_id_pin_0 73
+set_io pi_id_pin_1 77
+
+# PI GPIO
+set_io pi_gpio_pin_0  88
+set_io pi_gpio_pin_1  99
+set_io pi_gpio_pin_2 101
+
+# FTDI
+set_io ftdi_cts 119
+set_io ftdi_rx  122
+set_io ftdi_tx  124
+set_io ftdi_rts 125
+
+# CB Select
+set_io cb_sel_pin_0 63
+set_io cb_sel_pin_1 64
+
+# Configuration PINS
+set_io cfg_done	 64
+set_io cfg_rst_n 66
+set_io cfg_so    67
+set_io cfg_si    68
+set_io cfg_sck   70
+set_io cfg_ss    71
+
+# Jumper PINS
+set_io jmpr_pin_0 128
+set_io jmpr_pin_1 129
+
+# Extra PINS
+set_io xtra_pin_0 120
+set_io xtra_pin_1 121
+set_io xtra_pin_2 116
+set_io xtra_pin_3 117
+set_io xtra_pin_3 117
+set_io xtra_pin_4 118
+
+# SRAM
+set_io sram_ce_n 24
+set_io sram_we_n 11
+set_io sram_oe_n 76
+set_io sram_lb_n 81
+set_io sram_ub_n 75
+set_io sram_a0   34
+set_io sram_a1   33
+set_io sram_a2   32
+set_io sram_a3   31
+set_io sram_a4   25
+set_io sram_a5   10
+set_io sram_a6    9
+set_io sram_a7    4
+set_io sram_a8    3
+set_io sram_a9    2
+set_io sram_a10 107
+set_io sram_a11 106
+set_io sram_a12 105
+set_io sram_a13 104
+set_io sram_a14 102
+set_io sram_a15  62
+set_io sram_a16  60
+set_io sram_a17  61
+set_io sram_a18  98
+set_io sram_d0   23
+set_io sram_d1   22
+set_io sram_d2   19
+set_io sram_d3   18
+set_io sram_d4   17
+set_io sram_d5   16
+set_io sram_d6   15
+set_io sram_d7   12
+set_io sram_d8   97
+set_io sram_d9   96
+set_io sram_d10  95
+set_io sram_d11  91
+set_io sram_d12  84
+set_io sram_d13  82
+set_io sram_d14  83
+set_io sram_d15  80
+
+# PMOD P1
+set_io pmp1_pin_0 141
+set_io pmp1_pin_1 139
+set_io pmp1_pin_2 138
+set_io pmp1_pin_3 137
+set_io pmp1_pin_4 136
+set_io pmp1_pin_5 135
+set_io pmp1_pin_6 134
+set_io pmp1_pin_7 130
+
+# PMOD P2
+set_io pmp2_pin_0 55
+set_io pmp2_pin_1 56
+set_io pmp2_pin_2 47
+set_io pmp2_pin_3 48
+set_io pmp2_pin_4 44
+set_io pmp2_pin_5 45
+set_io pmp2_pin_6 42
+set_io pmp2_pin_7 43
+
+# PMOD P3
+set_io pmp3_pin_0 41
+set_io pmp3_pin_1 39
+set_io pmp3_pin_2 38
+set_io pmp3_pin_3 37
+
+# PMOD P4
+set_io pmp3_pin_0   1
+set_io pmp3_pin_1 144
+set_io pmp3_pin_2 143
+set_io pmp3_pin_3 142

@@ -1,4 +1,4 @@
-PROJ = blink
+PROJ = blank
 PART = hx
 DEV  = 8k
 PKG  = tq144:4k
