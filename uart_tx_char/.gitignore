@@ -1,5 +1,5 @@
 *.asc
 *.bin
 *.blif
-icezprog
 *.rpt
+*.swp

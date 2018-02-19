@@ -6,7 +6,7 @@ module uart_tx_char (
     // OK LED
     output ok_led,
     // UART lines
-    output ftdi_tx
+    output ftdi_rx
     );
 
     /* 9600 Hz clock generation (from 100 MHz) */
@@ -45,7 +45,7 @@ module uart_tx_char (
         // input: tx is finished
         .txdone (uart_txed),
         // output UART tx pin
-        .tx (ftdi_tx),
+        .tx (ftdi_rx),
     );
 
     /* Wiring */

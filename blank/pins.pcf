@@ -6,34 +6,34 @@ set_io clk_100mhz 49
 # OK LED
 set_io ok_led 110
 
-# PI SPI
+# RPI SPI
 set_io pi_spi_ce0  85
 set_io pi_spi_ce1  78
 set_io pi_spi_sck  79
 set_io pi_spi_miso 87
 set_io pi_spi_misi 90
 
-# PI I2C
+# RPI I2C
 set_io pi_i2c_scl 114
 set_io pi_i2c_sda 115
 
-# PI UART
-set_io pi_uart_tx 112
-set_io pi_uart_rx 113
+# RPI UART (from the point of view of the RPI)
+set_io pi_uart_rx 112
+set_io pi_uart_tx 113
 
-# PI ID
+# RPI ID
 set_io pi_id_pin_0 73
 set_io pi_id_pin_1 77
 
-# PI GPIO
+# RPI GPIO
 set_io pi_gpio_pin_0  88
 set_io pi_gpio_pin_1  99
 set_io pi_gpio_pin_2 101
 
-# FTDI
+# FTDI (from the point of view of the ftdi device)
 set_io ftdi_cts 119
-set_io ftdi_rx  122
-set_io ftdi_tx  124
+set_io ftdi_rx  124
+set_io ftdi_tx  122
 set_io ftdi_rts 125
 
 # CB Select
