@@ -1,0 +1,6 @@
+# IceZero FPGA
+
+set_io --warn-no-port clk_100mhz 49
+set_io --warn-no-port ok_led     110
+#set_io --warn-no-port tx_pin     124 # (To FTDI RX pin)
+set_io --warn-no-port tx_pin     112 # (To RPI UART RX pin)

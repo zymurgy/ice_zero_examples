@@ -1,12 +1,12 @@
 /* Example derived from https://github.com/nesl/ice40_examples/tree/master/uart_transmission */
 
-module uart_tx_char (
+module uart_tx_top (
     // input hardware clock (100 MHz)
     input clk_100mhz, 
     // OK LED
     output ok_led,
     // UART lines
-    output ftdi_rx
+    output tx_pin
     );
 
     /* 9600 Hz clock generation (from 100 MHz) */
@@ -45,7 +45,7 @@ module uart_tx_char (
         // input: tx is finished
         .txdone (uart_txed),
         // output UART tx pin
-        .tx (ftdi_rx),
+        .tx (tx_pin)
     );
 
     /* Wiring */

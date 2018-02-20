@@ -1,4 +1,4 @@
-PROJ = uart_tx_char
+PROJ = uart_tx_top
 PART = hx
 DEV  = 8k
 PKG  = tq144:4k

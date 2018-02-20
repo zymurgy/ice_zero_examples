@@ -1,6 +1,0 @@
-# IceZero FPGA
-
-set_io --warn-no-port clk_100mhz 49
-set_io --warn-no-port ok_led     110
-set_io --warn-no-port ftdi_rx    124
-# set_io --warn-no-port ftdi_rx    112 # (To use RPI uart instead)

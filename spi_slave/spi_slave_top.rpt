@@ -1,0 +1,39 @@
+
+icetime topological timing analysis report
+==========================================
+
+Info: max_span_hack is enabled: estimate is conservative.
+
+Report for critical path:
+-------------------------
+
+        lc40_29_21_4 (LogicCell40) [clk] -> lcout: 0.640 ns
+     0.640 ns net_115380 (slave.sclk_reg[2])
+        t28 (LocalMux) I -> O: 0.330 ns
+        inmux_29_21_119498_119527 (InMux) I -> O: 0.260 ns
+        lc40_29_21_0 (LogicCell40) in0 -> lcout: 0.449 ns
+     1.678 ns net_115376 ($abc$287$n10)
+        odrv_29_21_115376_119588 (Odrv4) I -> O: 0.372 ns
+        t36 (Span4Mux_h4) I -> O: 0.316 ns
+        t38 (Span4Mux_v4) I -> O: 0.372 ns
+        t37 (LocalMux) I -> O: 0.330 ns
+        inmux_24_24_100180_100186 (InMux) I -> O: 0.260 ns
+        t7 (CascadeMux) I -> O: 0.000 ns
+        lc40_24_24_0 (LogicCell40) in2 -> lcout: 0.379 ns
+     3.705 ns net_96033 ($abc$287$n16)
+        odrv_24_24_96033_100142 (Odrv4) I -> O: 0.372 ns
+        t25 (LocalMux) I -> O: 0.330 ns
+        inmux_24_24_100153_100230 (CEMux) I -> O: 0.603 ns
+     5.009 ns net_100230 ($abc$287$n16)
+        lc40_24_24_6 (LogicCell40) ce [setup]: 0.000 ns
+     5.009 ns net_96039 (slave.bit_cnt[1])
+
+Resolvable net names on path:
+     0.640 ns ..  1.229 ns slave.sclk_reg[2]
+     1.678 ns ..  3.326 ns $abc$287$n10
+     3.705 ns ..  5.009 ns $abc$287$n16
+                  lcout -> slave.bit_cnt[1]
+
+Total number of logic levels: 3
+Total path delay: 5.01 ns (199.62 MHz)
+
