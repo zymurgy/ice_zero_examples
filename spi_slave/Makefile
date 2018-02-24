@@ -15,7 +15,10 @@ all:
 prog: $(PROJ).bin
 	icezprog $<
 
+spidev_test: spidev_test.c
+	gcc -o spidev_test spidev_test.c
+
 clean:
-	rm -f $(PROJ).asc $(PROJ).bin $(PROJ).blif $(PROJ).rpt
+	rm -f $(PROJ).asc $(PROJ).bin $(PROJ).blif $(PROJ).rpt spidev_test
 
 .PHONY: all clean prog
