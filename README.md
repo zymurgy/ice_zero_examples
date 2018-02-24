@@ -9,4 +9,4 @@ It uses the open source tool chain for the ICE40 family of FPGAs.
 
 [Project IceStorm](http://www.clifford.at/icestorm/)
 
-![alt text](https://github.com/zymurgy/ice_zero_examples/blob/master/icezero.png "IceZero paired with Raspberry Pi Zero")
+![alt text](https://github.com/zymurgy/ice_zero_examples/blob/master/images/icezero.png "IceZero paired with Raspberry Pi Zero")
