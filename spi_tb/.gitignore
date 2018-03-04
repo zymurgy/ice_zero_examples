@@ -1,0 +1,6 @@
+*.asc
+*.bin
+*.blif
+*.rpt
+*.swp
+spidev_test
