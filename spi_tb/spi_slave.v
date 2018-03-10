@@ -1,3 +1,5 @@
+/* verilator lint_off UNUSED */
+
 module spi_slave (
   input  clk,
   input  sclk,
@@ -32,12 +34,14 @@ module spi_slave (
   reg [7:0] byte_send;
   always @(posedge clk)
     if (~ssel_active)
-      sclk_reg <= 3'b000;
-      ssel_reg <= 3'b000;
-      mosi_reg <= 2'b00;
-      bit_cnt <= 3'b000;
-      done <= 1'b0;
-      dout <= 8'h00;
+      begin
+        sclk_reg <= 3'b000;
+        ssel_reg <= 3'b000;
+        mosi_reg <= 2'b00;
+        bit_cnt <= 3'b000;
+        done <= 1'b0;
+        dout <= 8'h00;
+      end
     else
       if (sclk_rise)
         begin
@@ -46,7 +50,6 @@ module spi_slave (
         end
         else if (sclk_fall)
           byte_send <= {byte_send[6:0], 1'b0};
-      end
 
   always @(posedge clk)
     if (ssel_active)

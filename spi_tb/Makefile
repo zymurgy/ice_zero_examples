@@ -1,24 +1,15 @@
-PROJ = spi_wishbone_top
-PART = hx
-DEV  = 8k
-PKG  = tq144:4k
-PCF  = pins.pcf
+all:	build comp run
 
-FILES = $(PROJ).v spi_slave.v
+build:
+	verilator -Wall --trace --cc spi_slave.v --exe spi_slave_tb.cpp
 
-all:
-	yosys -p "synth_ice40 -top $(PROJ) -blif $(PROJ).blif" $(FILES)
-	arachne-pnr -d $(DEV) -P $(PKG) -o $(PROJ).asc -p $(PCF) $(PROJ).blif
-	icepack $(PROJ).asc $(PROJ).bin
-	icetime -d $(PART)$(DEV) -P $(PKG) -r $(PROJ).rpt -mt $(PROJ).asc
+comp:
+	make -C obj_dir -j -f Vspi_slave.mk Vspi_slave
 
-prog: $(PROJ).bin
-	icezprog $<
-
-spidev_test: spidev_test.c
-	gcc -o spidev_test spidev_test.c
+run:
+	obj_dir/Vspi_slave
 
 clean:
-	rm -f $(PROJ).asc $(PROJ).bin $(PROJ).blif $(PROJ).rpt spidev_test
+	rm -rf obj_dir *.vcd
 
-.PHONY: all clean prog
+.PHONY: all build comp run clean
