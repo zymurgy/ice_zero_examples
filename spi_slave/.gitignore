@@ -3,4 +3,4 @@
 *.blif
 *.rpt
 *.swp
-spidev_test
+spi-test

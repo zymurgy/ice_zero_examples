@@ -6,6 +6,7 @@
 int main(int argc, char **argv, char **env) {
   int i;
   int clk;
+  int sclk = 0;
   Verilated::commandArgs(argc, argv);
   // init top verilog instance
   Vspi_slave* top = new Vspi_slave;
@@ -25,6 +26,12 @@ int main(int argc, char **argv, char **env) {
     top->ssel = (i < 2);
     // dump variables into VCD file and toggle clock
     for (clk=0; clk<2; clk++) {
+      if (sclk<4) {
+         sclk=sclk+clk;
+      } else {
+         top->sclk = ~top->sclk;
+         sclk = 0;
+      }
       tfp->dump (2*i+clk);
       top->clk = !top->clk;
       top->eval ();

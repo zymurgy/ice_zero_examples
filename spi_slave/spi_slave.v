@@ -45,4 +45,25 @@ module spi_slave (
     if (byte_rcvd)
       led <= byte_data_rcvd[0];
 
+  reg [7:0] cnt;
+  reg [7:0] byte_sent;
+  always @(posedge clk)
+    if (ssel_start_msg)
+      cnt <= cnt + 8'h01;
+
+  always @(posedge clk)
+    if (ssel_active)
+      begin
+        if (ssel_start_msg)
+           byte_sent <= cnt;
+        else
+          if (sclk_fall)
+            if (bit_cnt == 3'b000)
+               byte_sent <= 8'h00;
+            else
+               byte_sent <= {byte_sent[6:0], 1'b0};
+      end
+
+   assign miso = byte_sent[7];
+      
 endmodule
